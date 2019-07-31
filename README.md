@@ -13,7 +13,7 @@ in a database. The current implementation has quite a few problems making it a n
 As the new engineer leading this project your first task is to make it production ready, feel free to refactor any piece
 necessary to achieve the goal.
 
-### How to delivery the code
+### How to deliver the code
 
 Please send an email containing your solution with a link to a public repository.
 
