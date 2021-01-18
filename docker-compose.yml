@@ -1,0 +1,25 @@
+
+version: '3'
+
+services:
+  db:
+    image: "postgres"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: compose-postgres
+      POSTGRES_USER: compose-postgres
+      POSTGRES_PASSWORD: compose-postgres
+  app:
+    image: 'docker-spring-boot:latest'
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_USERNAME: compose-postgres
+      SPRING_DATASOURCE_PASSWORD: compose-postgres
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/compose-postgres
+      TOKEN: TOKEN
+    depends_on:
+      - db
+
